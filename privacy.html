@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Nomfly</title>
+    <meta name="description" content="Nomfly Privacy Policy — how we collect, use, and protect your data.">
+    <link rel="icon" type="image/png" href="assets/app-icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="legal-nav">
+        <a href="index.html"><img src="assets/app-icon.png" alt="Nomfly" width="28" height="28"></a>
+        <a href="index.html">Nomfly</a>
+    </nav>
+
+    <main class="legal">
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last Updated: April 14, 2026</p>
+
+        <p>Tapwise Digital LLC ("we," "us," or "our") operates the Nomfly mobile application. This Privacy Policy explains how we collect, use, and share your personal information.</p>
+
+        <h2>1. Information We Collect</h2>
+
+        <h3>Information You Provide</h3>
+        <ul>
+            <li><strong>Account Information:</strong> Email address and display name (via AWS Cognito)</li>
+            <li><strong>Taste Preferences:</strong> Cuisine scores, spice tolerance, dietary restrictions, disliked ingredients (from onboarding quiz and ongoing use)</li>
+            <li><strong>Meal History:</strong> Accepted/rejected meal decisions, star ratings, timestamps</li>
+            <li><strong>Household Information:</strong> Names and dietary restrictions of household members you add</li>
+            <li><strong>User-Submitted Recipes:</strong> Titles, ingredients, steps, and descriptions you submit</li>
+            <li><strong>Grocery Lists:</strong> Items you add to your shopping lists</li>
+            <li><strong>Saved Recipes &amp; Collections:</strong> Recipes you save and how you organize them</li>
+        </ul>
+
+        <h3>Information Collected Automatically</h3>
+        <ul>
+            <li><strong>Usage Data:</strong> Decision counts, feature usage patterns, session frequency</li>
+            <li><strong>Device Information:</strong> iOS version, device model (for compatibility only)</li>
+        </ul>
+
+        <h3>Information Processed Temporarily</h3>
+        <ul>
+            <li><strong>Fridge Photos:</strong> When you use the ingredient scan feature, your photo is sent to Anthropic's Claude Vision API for ingredient identification. The photo is NOT stored on our servers. It is transmitted via encrypted connection (TLS 1.3), processed, and discarded.</li>
+        </ul>
+
+        <h2>2. Third-Party AI Providers</h2>
+        <p>Nomfly uses third-party AI services to power core features. <strong>We explicitly disclose these providers and what data they receive:</strong></p>
+
+        <h3>Anthropic (Claude AI)</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Meal decision suggestions, taste learning, recipe selection, ingredient photo scanning</li>
+            <li><strong>Data Shared:</strong> Meal preferences, cuisine scores, dietary restrictions, fridge contents (text), fridge photos (temporary, for vision scan only)</li>
+            <li><strong>Data NOT Shared:</strong> Your name, email, location, or payment information</li>
+            <li><strong>Anthropic's Privacy Policy:</strong> <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">anthropic.com/privacy</a></li>
+        </ul>
+
+        <h3>Google (Gemini)</h3>
+        <ul>
+            <li><strong>Purpose:</strong> AI-generated food photography for recipe cards</li>
+            <li><strong>Data Shared:</strong> Recipe titles and key ingredients (text only, for image generation prompts)</li>
+            <li><strong>Data NOT Shared:</strong> Any personal user data</li>
+        </ul>
+
+        <h3>Google (Places API)</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Finding nearby restaurants when you use the Restaurants feature</li>
+            <li><strong>Data Shared:</strong> Approximate location (latitude/longitude) — only when you grant location permission</li>
+        </ul>
+
+        <h3>USDA (FoodData Central)</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Nutrition information for recipes</li>
+            <li><strong>Data Shared:</strong> Ingredient names (no personal data)</li>
+        </ul>
+
+        <h2>3. How We Use Your Information</h2>
+        <ul>
+            <li><strong>Personalization:</strong> Your taste profile and meal history are used to improve AI-powered meal suggestions over time</li>
+            <li><strong>Core Functionality:</strong> Saved recipes, collections, grocery lists, household coordination</li>
+            <li><strong>Analytics:</strong> Aggregate, anonymized usage data to improve the app (no individual tracking)</li>
+        </ul>
+        <p>We do <strong>NOT</strong>:</p>
+        <ul>
+            <li>Sell your personal data to anyone</li>
+            <li>Use your data for advertising or ad targeting</li>
+            <li>Share your data with data brokers</li>
+            <li>Track you across other apps or websites</li>
+        </ul>
+
+        <h2>4. Data Storage &amp; Security</h2>
+        <ul>
+            <li><strong>Backend:</strong> AWS (us-east-1) — PostgreSQL database with encryption at rest (AES-256)</li>
+            <li><strong>Transit:</strong> All data transmitted via TLS 1.3</li>
+            <li><strong>Authentication:</strong> AWS Cognito with JWT tokens</li>
+            <li><strong>Local Storage:</strong> Taste profile and preferences stored on your device for offline access</li>
+            <li><strong>Fridge Photos:</strong> Never stored server-side — processed in memory and discarded</li>
+        </ul>
+
+        <h2>5. Data Retention</h2>
+        <ul>
+            <li><strong>Account Data:</strong> Retained until you delete your account</li>
+            <li><strong>Meal History:</strong> Retained until you delete your account</li>
+            <li><strong>Taste Profile:</strong> Retained until you delete your account</li>
+            <li><strong>Fridge Photos:</strong> Not retained — processed and discarded immediately</li>
+            <li><strong>AI-Generated Images:</strong> Stored in AWS S3 indefinitely (not linked to your identity)</li>
+        </ul>
+
+        <h2>6. Your Rights</h2>
+
+        <h3>All Users</h3>
+        <ul>
+            <li><strong>Access:</strong> Export all your data in JSON format (Profile &gt; Privacy &amp; Data &gt; Export My Data)</li>
+            <li><strong>Deletion:</strong> Delete your account and all associated data (Profile &gt; Privacy &amp; Data &gt; Delete Account)</li>
+            <li><strong>AI Consent:</strong> Revoke AI data sharing anytime (Profile &gt; Privacy &amp; Data &gt; AI Data Sharing toggle)</li>
+            <li><strong>Correction:</strong> Update your profile, preferences, and dietary restrictions anytime</li>
+        </ul>
+
+        <h3>GDPR (EU/EEA Users)</h3>
+        <p>You have additional rights under GDPR including the right to data portability, right to restriction of processing, and right to object. Contact us at <a href="mailto:support@nomfly.com">support@nomfly.com</a>.</p>
+
+        <h3>UK GDPR (United Kingdom Users)</h3>
+        <p>Your rights under UK GDPR are substantially similar to EU GDPR. The supervisory authority is the Information Commissioner's Office (ICO). Contact us at <a href="mailto:support@nomfly.com">support@nomfly.com</a>.</p>
+
+        <h3>CCPA (California Users)</h3>
+        <p>You have the right to know what data we collect, request deletion, and opt out of data sales. We do not sell personal information. Contact us at <a href="mailto:support@nomfly.com">support@nomfly.com</a>.</p>
+
+        <h3>PIPEDA (Canada Users)</h3>
+        <p>We comply with Canada's Personal Information Protection and Electronic Documents Act. Contact us at <a href="mailto:support@nomfly.com">support@nomfly.com</a>.</p>
+
+        <h3>APPI (Japan Users)</h3>
+        <p>We comply with Japan's Act on the Protection of Personal Information. Your data is transferred to the United States where our servers are located. Contact us at <a href="mailto:support@nomfly.com">support@nomfly.com</a>.</p>
+
+        <h2>7. International Data Transfers</h2>
+        <p>If you access Nomfly from outside the United States, your personal data will be transferred to and processed in the United States. We use Standard Contractual Clauses (SCCs) and Data Processing Agreements (DPAs) with our AI providers to ensure adequate data protection.</p>
+
+        <h2>8. Children's Privacy</h2>
+        <p>Nomfly is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us personal information, contact us at <a href="mailto:support@nomfly.com">support@nomfly.com</a>.</p>
+
+        <h2>9. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of material changes via in-app notification or email. Continued use of the app after changes constitutes acceptance.</p>
+
+        <h2>10. Contact Us</h2>
+        <p>For privacy questions or to exercise your rights:</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:support@nomfly.com">support@nomfly.com</a></li>
+            <li><strong>Website:</strong> <a href="https://www.nomfly.com/privacy">nomfly.com/privacy</a></li>
+            <li><strong>Mail:</strong> Tapwise Digital LLC, 4030 Wake Forest Road, STE 349, Raleigh, NC 27609, USA</li>
+        </ul>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <p class="copyright">&copy; 2026 Nomfly. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
