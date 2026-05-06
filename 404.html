@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opening Nomfly</title>
+    <meta name="description" content="Open this shared Nomfly meal in the app.">
+    <meta property="og:title" content="Open this meal in Nomfly">
+    <meta property="og:description" content="See the shared meal card and get Nomfly on your phone.">
+    <meta property="og:image" content="/assets/app-icon.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="/assets/app-icon.png">
+    <style>
+        :root {
+            --warm-orange: #F28C38;
+            --deep-green: #2E6B57;
+            --cream: #FAF5E8;
+            --charcoal: #2E2E33;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+            color: var(--charcoal);
+            background: linear-gradient(145deg, #FFF7F0 0%, #FFFFFF 45%, #F0FAF5 100%);
+        }
+
+        main {
+            width: min(100%, 420px);
+            text-align: center;
+        }
+
+        img {
+            width: 86px;
+            height: 86px;
+            border-radius: 20px;
+            box-shadow: 0 16px 40px rgba(242, 140, 56, 0.28);
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 2rem;
+            line-height: 1.1;
+        }
+
+        p {
+            margin: 0 auto 22px;
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.45;
+        }
+
+        .actions {
+            display: grid;
+            gap: 12px;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 14px;
+            padding: 14px 18px;
+        }
+
+        .primary {
+            color: #fff;
+            background: linear-gradient(135deg, var(--warm-orange), #EB6B2E);
+        }
+
+        .secondary {
+            color: var(--deep-green);
+            background: rgba(46, 107, 87, 0.1);
+        }
+
+        .small {
+            margin-top: 18px;
+            font-size: 0.86rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <img src="/assets/app-icon.png" alt="Nomfly">
+        <h1>Opening Nomfly</h1>
+        <p>This shared meal opens in the Nomfly app. If the app is not installed, download it for your phone.</p>
+        <div class="actions">
+            <a id="open-app" class="primary" href="nomfly://">Open in Nomfly</a>
+            <a id="download-app" class="secondary" href="https://apps.apple.com/app/id6766716117">Download Nomfly</a>
+        </div>
+        <p class="small">If nothing happens, tap Download Nomfly.</p>
+    </main>
+
+    <script>
+        (function () {
+            var APP_STORE_URL = "https://apps.apple.com/app/id6766716117";
+            var PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.peterkimpro.nomfly";
+            var path = window.location.pathname || "";
+            var query = window.location.search || "";
+            var isAppLink = path.indexOf("/app/") === 0;
+            var appPath = isAppLink ? path.replace(/^\/app\//, "") : "";
+            var appUrl = appPath ? "nomfly://" + appPath + query : "nomfly://";
+            var ua = navigator.userAgent || "";
+            var isAndroid = /Android/i.test(ua);
+            var isIOS = /iPhone|iPad|iPod/i.test(ua);
+            var storeUrl = isAndroid ? PLAY_STORE_URL : APP_STORE_URL;
+            var androidIntentUrl = appPath
+                ? "intent://" + appPath + query + "#Intent;scheme=nomfly;package=com.peterkimpro.nomfly;S.browser_fallback_url=" + encodeURIComponent(PLAY_STORE_URL) + ";end"
+                : "intent://#Intent;scheme=nomfly;package=com.peterkimpro.nomfly;S.browser_fallback_url=" + encodeURIComponent(PLAY_STORE_URL) + ";end";
+            var launchUrl = isAndroid ? androidIntentUrl : appUrl;
+            var leftPageForApp = false;
+
+            document.getElementById("open-app").setAttribute("href", launchUrl);
+            document.getElementById("download-app").setAttribute("href", storeUrl);
+
+            if (!isAppLink) {
+                return;
+            }
+
+            if (isAndroid || isIOS) {
+                window.addEventListener("pagehide", function () {
+                    leftPageForApp = true;
+                });
+                document.addEventListener("visibilitychange", function () {
+                    if (document.hidden) {
+                        leftPageForApp = true;
+                    }
+                });
+                window.location.href = launchUrl;
+                window.setTimeout(function () {
+                    if (!leftPageForApp && !document.hidden) {
+                        window.location.href = storeUrl;
+                    }
+                }, 1300);
+            }
+        }());
+    </script>
+</body>
+</html>
