@@ -9,6 +9,7 @@
     <meta property="og:description" content="See the shared meal card and get Nomfly on your phone.">
     <meta property="og:image" content="/assets/app-icon.png">
     <meta property="og:type" content="website">
+    <meta name="apple-itunes-app" content="app-id=6766716117">
     <link rel="icon" type="image/png" href="/assets/app-icon.png">
     <style>
         :root {
@@ -94,7 +95,7 @@
         <p>This shared meal opens in the Nomfly app. If the app is not installed, download it for your phone.</p>
         <div class="actions">
             <a id="open-app" class="primary" href="nomfly://">Open in Nomfly</a>
-            <a id="download-app" class="secondary" href="https://apps.apple.com/app/id6766716117">Download Nomfly</a>
+            <a id="download-app" class="secondary" href="https://apps.apple.com/app/id6766716117">Download on the App Store</a>
         </div>
         <p class="small">If nothing happens, tap Download Nomfly.</p>
     </main>
@@ -102,7 +103,7 @@
     <script>
         (function () {
             var APP_STORE_URL = "https://apps.apple.com/app/id6766716117";
-            var PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.peterkimpro.nomfly";
+            var ANDROID_FALLBACK_URL = "https://www.nomfly.com";
             var path = window.location.pathname || "";
             var query = window.location.search || "";
             var isAppLink = path.indexOf("/app/") === 0;
@@ -111,15 +112,18 @@
             var ua = navigator.userAgent || "";
             var isAndroid = /Android/i.test(ua);
             var isIOS = /iPhone|iPad|iPod/i.test(ua);
-            var storeUrl = isAndroid ? PLAY_STORE_URL : APP_STORE_URL;
+            var storeUrl = isAndroid ? ANDROID_FALLBACK_URL : APP_STORE_URL;
             var androidIntentUrl = appPath
-                ? "intent://" + appPath + query + "#Intent;scheme=nomfly;package=com.peterkimpro.nomfly;S.browser_fallback_url=" + encodeURIComponent(PLAY_STORE_URL) + ";end"
-                : "intent://#Intent;scheme=nomfly;package=com.peterkimpro.nomfly;S.browser_fallback_url=" + encodeURIComponent(PLAY_STORE_URL) + ";end";
+                ? "intent://" + appPath + query + "#Intent;scheme=nomfly;package=com.peterkimpro.nomfly;S.browser_fallback_url=" + encodeURIComponent(ANDROID_FALLBACK_URL) + ";end"
+                : "intent://#Intent;scheme=nomfly;package=com.peterkimpro.nomfly;S.browser_fallback_url=" + encodeURIComponent(ANDROID_FALLBACK_URL) + ";end";
             var launchUrl = isAndroid ? androidIntentUrl : appUrl;
             var leftPageForApp = false;
 
             document.getElementById("open-app").setAttribute("href", launchUrl);
             document.getElementById("download-app").setAttribute("href", storeUrl);
+            if (isAndroid) {
+                document.getElementById("download-app").textContent = "Android coming soon";
+            }
 
             if (!isAppLink) {
                 return;
