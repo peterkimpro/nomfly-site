@@ -638,7 +638,35 @@ footer {
         line-height: 1.15;
     }
 
-    .float-emoji { display: none; }
+    .float-emoji {
+        display: block;
+        font-size: clamp(1.2rem, 5.2vw, 1.65rem);
+        opacity: 0.14;
+    }
+
+    .e1 { top: 7%; left: 7%; }
+    .e2 {
+        top: 10%;
+        right: 7%;
+        font-size: clamp(1.35rem, 5.8vw, 1.85rem);
+    }
+    .e3 {
+        top: 34%;
+        bottom: auto;
+        left: 4%;
+    }
+    .e4 {
+        top: 39%;
+        right: 5%;
+        bottom: auto;
+        font-size: clamp(1.3rem, 5.5vw, 1.75rem);
+    }
+    .e5 { top: 68%; left: 6%; }
+    .e6 {
+        top: 70%;
+        right: 7%;
+        font-size: clamp(1.15rem, 5vw, 1.55rem);
+    }
 }
 
 @media (max-width: 700px) and (max-height: 740px) {
@@ -723,6 +751,16 @@ footer {
         padding: 6px 9px;
     }
 
+    .float-emoji {
+        font-size: clamp(1rem, 4.6vw, 1.35rem);
+        opacity: 0.12;
+    }
+
+    .e3 { top: 31%; }
+    .e4 { top: 35%; }
+    .e5 { top: 66%; }
+    .e6 { top: 68%; }
+
     .available-now,
     .coming-soon {
         font-size: 0.56rem;
@@ -735,6 +773,7 @@ footer {
     }
 
     .download-nudge,
+    .float-emoji,
     .store-btn-primary,
     .store-btn-primary::after {
         animation: none;
