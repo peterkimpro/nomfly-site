@@ -247,7 +247,8 @@ body {
 /* Store buttons */
 .store-badges {
     display: flex;
-    gap: 12px;
+    align-items: flex-start;
+    gap: 14px;
     flex-wrap: wrap;
 }
 
@@ -256,6 +257,33 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 5px;
+}
+
+.app-store-download {
+    position: relative;
+}
+
+.download-nudge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    color: var(--deep-green);
+    font-size: 0.74rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    animation: nudgeBounce 1.8s ease-in-out infinite;
+}
+
+.nudge-arrow {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
 }
 
 .store-btn {
@@ -270,9 +298,52 @@ body {
     transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
+.store-btn-primary {
+    position: relative;
+    isolation: isolate;
+    min-width: 176px;
+    min-height: 50px;
+    padding: 9px 18px;
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.18),
+        0 0 0 0 rgba(242, 140, 56, 0);
+    animation: ctaHeartbeat 2.6s ease-in-out infinite;
+}
+
+.store-btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: -7px;
+    z-index: -1;
+    border: 2px solid rgba(242, 140, 56, 0.34);
+    border-radius: 16px;
+    opacity: 0;
+    animation: ctaRing 2.6s ease-out infinite;
+}
+
 a.store-btn:hover {
     transform: translateY(-1px);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+a.store-btn-primary:hover {
+    box-shadow:
+        0 16px 34px rgba(0, 0, 0, 0.22),
+        0 0 0 7px rgba(242, 140, 56, 0.12);
+}
+
+.android-coming-soon .store-btn {
+    background: rgba(46, 46, 51, 0.08);
+    border: 1px solid rgba(46, 46, 51, 0.1);
+    box-shadow: none;
+}
+
+.android-coming-soon .store-small {
+    color: rgba(46, 46, 51, 0.48);
+}
+
+.android-coming-soon .store-name {
+    color: var(--charcoal);
 }
 
 .store-small {
@@ -305,6 +376,48 @@ a.store-btn:hover {
     color: var(--deep-green);
     text-transform: uppercase;
     letter-spacing: 0.06em;
+}
+
+@keyframes nudgeBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+}
+
+@keyframes ctaHeartbeat {
+    0%, 58%, 100% {
+        box-shadow:
+            0 12px 28px rgba(0, 0, 0, 0.18),
+            0 0 0 0 rgba(242, 140, 56, 0);
+    }
+    14% {
+        box-shadow:
+            0 16px 34px rgba(0, 0, 0, 0.23),
+            0 0 0 8px rgba(242, 140, 56, 0.14);
+    }
+    26% {
+        box-shadow:
+            0 12px 28px rgba(0, 0, 0, 0.18),
+            0 0 0 0 rgba(242, 140, 56, 0);
+    }
+    38% {
+        box-shadow:
+            0 15px 32px rgba(0, 0, 0, 0.21),
+            0 0 0 5px rgba(242, 140, 56, 0.1);
+    }
+}
+
+@keyframes ctaRing {
+    0%, 12% {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    18% {
+        opacity: 1;
+    }
+    54%, 100% {
+        opacity: 0;
+        transform: scale(1.12);
+    }
 }
 
 /* ===== FOOTER ===== */
@@ -370,7 +483,7 @@ footer {
         gap: 28px;
         width: 100%;
         max-width: 380px;
-        transform: translateY(clamp(16px, 3vh, 28px));
+        transform: none;
     }
 
     .hero-text {
@@ -379,7 +492,7 @@ footer {
     }
 
     .phone-frame {
-        width: min(56vw, 216px);
+        width: min(53vw, 204px);
         border-radius: 32px;
         padding: 5px;
         margin-bottom: 18px;
@@ -414,11 +527,13 @@ footer {
     }
 
     .store-badges {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        flex-wrap: nowrap;
         justify-content: center;
-        gap: 8px;
-        width: min(100%, 292px);
+        gap: 10px;
+        width: min(100%, 326px);
         max-width: calc(100vw - 32px);
         margin: 0 auto;
         padding: 2px 0 0;
@@ -430,6 +545,17 @@ footer {
         gap: 5px;
     }
 
+    .download-nudge {
+        font-size: 0.7rem;
+        gap: 2px;
+        margin-bottom: 2px;
+    }
+
+    .nudge-arrow {
+        width: 9px;
+        height: 9px;
+    }
+
     .store-btn {
         width: 100%;
         min-width: 0;
@@ -439,6 +565,36 @@ footer {
         border-radius: 12px;
         gap: 8px;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+    }
+
+    .store-btn-primary {
+        min-height: 58px;
+        border-radius: 15px;
+        padding: 11px 16px;
+    }
+
+    .store-btn-primary::after {
+        border-radius: 20px;
+        inset: -6px;
+    }
+
+    .app-store-download .store-name {
+        font-size: 1rem;
+    }
+
+    .app-store-download .store-small {
+        font-size: 0.58rem;
+    }
+
+    .android-coming-soon {
+        width: min(100%, 248px);
+        margin: 2px auto 0;
+    }
+
+    .android-coming-soon .store-btn {
+        min-height: 42px;
+        padding: 7px 12px;
+        box-shadow: none;
     }
 
     .store-btn svg {
@@ -473,11 +629,11 @@ footer {
 
     .hero-content {
         gap: 18px;
-        transform: translateY(clamp(8px, 2vh, 14px));
+        transform: none;
     }
 
     .phone-frame {
-        width: min(46vw, 168px);
+        width: min(42vw, 154px);
         border-radius: 30px;
         padding: 4px;
         margin-bottom: 12px;
@@ -514,6 +670,12 @@ footer {
         gap: 7px;
     }
 
+    .store-btn-primary {
+        min-height: 52px;
+        padding: 9px 14px;
+        border-radius: 14px;
+    }
+
     .store-btn svg {
         width: 18px;
         height: 18px;
@@ -528,6 +690,20 @@ footer {
         font-size: 0.8rem;
     }
 
+    .app-store-download .store-name {
+        font-size: 0.92rem;
+    }
+
+    .download-nudge {
+        font-size: 0.62rem;
+        margin-bottom: 1px;
+    }
+
+    .android-coming-soon .store-btn {
+        min-height: 38px;
+        padding: 6px 9px;
+    }
+
     .available-now,
     .coming-soon {
         font-size: 0.56rem;
@@ -537,6 +713,12 @@ footer {
 @media (prefers-reduced-motion: reduce) {
     .carousel-track {
         transition: none;
+    }
+
+    .download-nudge,
+    .store-btn-primary,
+    .store-btn-primary::after {
+        animation: none;
     }
 }
 
