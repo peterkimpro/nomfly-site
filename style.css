@@ -348,9 +348,11 @@ footer {
 @media (max-width: 700px) {
     .hero {
         flex: initial;
+        min-height: 100vh;
         min-height: 100dvh;
         min-height: max(100vh, 100dvh);
-        padding: 14px 18px max(12px, env(safe-area-inset-bottom));
+        align-items: flex-start;
+        padding: 8px 18px max(12px, env(safe-area-inset-bottom));
     }
 
     .hero-content {
