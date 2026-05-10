@@ -7,14 +7,15 @@
     var track = carousel.querySelector("[data-carousel-track]");
     var slides = Array.prototype.slice.call(carousel.querySelectorAll("[data-carousel-slide]"));
     var dots = Array.prototype.slice.call(carousel.querySelectorAll("[data-carousel-dot]"));
-    var previousButton = carousel.querySelector("[data-carousel-prev]");
-    var nextButton = carousel.querySelector("[data-carousel-next]");
     var progress = carousel.querySelector("[data-carousel-progress]");
-    var intervalMs = 3000;
+    var intervalMs = 5000;
     var activeIndex = 0;
     var timer = null;
     var resumeTimer = null;
+    var resetTimer = null;
     var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var realSlideCount = dots.length || slides.length;
+    var transitionMs = 580;
 
     function restartProgress() {
         if (!progress || reducedMotion) {
@@ -26,21 +27,40 @@
     }
 
     function render() {
+        var dotIndex = activeIndex % realSlideCount;
         track.style.transform = "translate3d(-" + (activeIndex * 100) + "%, 0, 0)";
         slides.forEach(function (slide, index) {
             slide.classList.toggle("is-active", index === activeIndex);
-            slide.setAttribute("aria-hidden", index === activeIndex ? "false" : "true");
+            slide.setAttribute("aria-hidden", index === activeIndex && index < realSlideCount ? "false" : "true");
         });
         dots.forEach(function (dot, index) {
-            dot.classList.toggle("is-active", index === activeIndex);
-            dot.setAttribute("aria-current", index === activeIndex ? "true" : "false");
+            dot.classList.toggle("is-active", index === dotIndex);
+            dot.setAttribute("aria-current", index === dotIndex ? "true" : "false");
         });
         restartProgress();
     }
 
-    function show(index) {
-        activeIndex = (index + slides.length) % slides.length;
+    function jumpWithoutAnimation(index) {
+        track.style.transition = "none";
+        activeIndex = index;
         render();
+        track.offsetHeight;
+        track.style.transition = "";
+    }
+
+    function show(index) {
+        if (resetTimer) {
+            window.clearTimeout(resetTimer);
+            resetTimer = null;
+        }
+        activeIndex = index < 0 ? realSlideCount - 1 : index;
+        render();
+        if (activeIndex >= realSlideCount) {
+            resetTimer = window.setTimeout(function () {
+                resetTimer = null;
+                jumpWithoutAnimation(0);
+            }, transitionMs + 30);
+        }
     }
 
     function stop() {
@@ -83,22 +103,6 @@
             start();
         });
     });
-
-    if (previousButton) {
-        previousButton.addEventListener("click", function () {
-            stop();
-            show(activeIndex - 1);
-            start();
-        });
-    }
-
-    if (nextButton) {
-        nextButton.addEventListener("click", function () {
-            stop();
-            show(activeIndex + 1);
-            start();
-        });
-    }
 
     carousel.addEventListener("mouseenter", stop);
     carousel.addEventListener("mouseleave", start);
