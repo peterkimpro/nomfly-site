@@ -8,7 +8,7 @@
     var slides = Array.prototype.slice.call(carousel.querySelectorAll("[data-carousel-slide]"));
     var dots = Array.prototype.slice.call(carousel.querySelectorAll("[data-carousel-dot]"));
     var progress = carousel.querySelector("[data-carousel-progress]");
-    var intervalMs = 5000;
+    var intervalMs = 4000;
     var activeIndex = 0;
     var timer = null;
     var resumeTimer = null;
