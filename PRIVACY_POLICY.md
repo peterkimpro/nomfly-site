@@ -1,6 +1,6 @@
 # Nomfly Privacy Policy
 
-**Last Updated: April 14, 2026**
+**Last Updated: May 10, 2026**
 
 Tapwise Digital LLC ("we," "us," or "our") operates the Nomfly mobile application. This Privacy Policy explains how we collect, use, and share your personal information.
 
@@ -16,15 +16,16 @@ Tapwise Digital LLC ("we," "us," or "our") operates the Nomfly mobile applicatio
 - **Saved Recipes & Collections:** Recipes you save and how you organize them
 
 ### Information Collected Automatically
-- **Usage Data:** Decision counts, feature usage patterns, session frequency
+- **App Usage Data:** Decision counts, feature usage patterns, session frequency
+- **Website Analytics:** Page views, referrers, outbound link clicks, browser/device information, and approximate geography through Google Analytics
 - **Device Information:** iOS version, device model (for compatibility only)
 
 ### Information Processed Temporarily
 - **Fridge Photos:** When you use the fridge scan feature, your photo is sent to Anthropic's Claude Vision API for ingredient identification. The photo is NOT stored on our servers. It is transmitted via encrypted connection (TLS 1.3), processed, and discarded.
 
-## 2. Third-Party AI Providers
+## 2. Third-Party Service Providers
 
-Nomfly uses third-party AI services to power core features. **We explicitly disclose these providers and what data they receive:**
+Nomfly uses third-party services to power core features and understand website traffic. **We explicitly disclose these providers and what data they receive:**
 
 ### Anthropic (Claude AI)
 - **Purpose:** Meal decision suggestions, taste learning, recipe selection, fridge photo scanning
@@ -43,6 +44,12 @@ Nomfly uses third-party AI services to power core features. **We explicitly disc
 - **Data Shared:** Approximate location (latitude/longitude) — only when you grant location permission
 - **Google's Privacy Policy:** https://policies.google.com/privacy
 
+### Google Analytics
+- **Purpose:** Website traffic measurement, source/referrer reporting, page engagement, and outbound click analytics
+- **Data Shared:** Website page URLs, referrers, browser/device information, approximate geography, and click events for App Store, support, and social links
+- **Data NOT Shared:** Your Nomfly account data, meal preferences, grocery lists, recipe content, payment information, or app activity
+- **Google's Privacy Policy:** https://policies.google.com/privacy
+
 ### USDA (FoodData Central)
 - **Purpose:** Nutrition information for recipes
 - **Data Shared:** Ingredient names (no personal data)
@@ -51,7 +58,7 @@ Nomfly uses third-party AI services to power core features. **We explicitly disc
 
 - **Personalization:** Your taste profile and meal history are used to improve AI-powered meal suggestions over time
 - **Core Functionality:** Saved recipes, collections, grocery lists, household coordination
-- **Analytics:** Aggregate, anonymized usage data to improve the app (no individual tracking)
+- **Analytics:** Website and app usage trends to improve Nomfly and understand which pages and campaigns are working
 
 We do **NOT**:
 - Sell your personal data to anyone
