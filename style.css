@@ -346,6 +346,25 @@ a.store-btn-primary:hover {
     color: var(--charcoal);
 }
 
+@media (min-width: 701px) {
+    .app-store-download,
+    .android-coming-soon {
+        padding-top: 28px;
+    }
+
+    .download-nudge {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .android-coming-soon .store-btn {
+        min-height: 50px;
+        padding: 9px 18px;
+    }
+}
+
 .store-small {
     display: block;
     font-size: 0.55rem;
