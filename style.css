@@ -564,6 +564,11 @@ footer {
         gap: 5px;
     }
 
+    .app-store-download {
+        width: min(100%, 248px);
+        margin: 0 auto;
+    }
+
     .download-nudge {
         font-size: 0.7rem;
         gap: 2px;
@@ -587,9 +592,9 @@ footer {
     }
 
     .store-btn-primary {
-        min-height: 58px;
-        border-radius: 15px;
-        padding: 11px 16px;
+        min-height: 52px;
+        border-radius: 14px;
+        padding: 9px 14px;
     }
 
     .store-btn-primary::after {
@@ -598,11 +603,11 @@ footer {
     }
 
     .app-store-download .store-name {
-        font-size: 1rem;
+        font-size: 0.94rem;
     }
 
     .app-store-download .store-small {
-        font-size: 0.58rem;
+        font-size: 0.54rem;
     }
 
     .android-coming-soon {
@@ -644,27 +649,33 @@ footer {
         opacity: 0.14;
     }
 
-    .e1 { top: 7%; left: 7%; }
+    .e1 {
+        top: 6%;
+        left: 6%;
+    }
     .e2 {
-        top: 10%;
-        right: 7%;
+        top: 18%;
+        right: 4%;
         font-size: clamp(1.35rem, 5.8vw, 1.85rem);
     }
     .e3 {
-        top: 34%;
+        top: 31%;
         bottom: auto;
-        left: 4%;
+        left: 2%;
     }
     .e4 {
-        top: 39%;
-        right: 5%;
+        top: 54%;
+        right: 3%;
         bottom: auto;
         font-size: clamp(1.3rem, 5.5vw, 1.75rem);
     }
-    .e5 { top: 68%; left: 6%; }
+    .e5 {
+        top: 73%;
+        left: 9%;
+    }
     .e6 {
-        top: 70%;
-        right: 7%;
+        top: 64%;
+        right: 16%;
         font-size: clamp(1.15rem, 5vw, 1.55rem);
     }
 }
@@ -718,9 +729,9 @@ footer {
     }
 
     .store-btn-primary {
-        min-height: 52px;
-        padding: 9px 14px;
-        border-radius: 14px;
+        min-height: 48px;
+        padding: 8px 12px;
+        border-radius: 13px;
     }
 
     .store-btn svg {
@@ -756,10 +767,14 @@ footer {
         opacity: 0.12;
     }
 
-    .e3 { top: 31%; }
-    .e4 { top: 35%; }
-    .e5 { top: 66%; }
-    .e6 { top: 68%; }
+    .e2 { top: 16%; }
+    .e3 { top: 27%; }
+    .e4 { top: 49%; }
+    .e5 { top: 72%; }
+    .e6 {
+        top: 61%;
+        right: 15%;
+    }
 
     .available-now,
     .coming-soon {
