@@ -7,6 +7,8 @@
     var track = carousel.querySelector("[data-carousel-track]");
     var slides = Array.prototype.slice.call(carousel.querySelectorAll("[data-carousel-slide]"));
     var dots = Array.prototype.slice.call(carousel.querySelectorAll("[data-carousel-dot]"));
+    var previousButton = carousel.querySelector("[data-carousel-prev]");
+    var nextButton = carousel.querySelector("[data-carousel-next]");
     var progress = carousel.querySelector("[data-carousel-progress]");
     var intervalMs = 3000;
     var activeIndex = 0;
@@ -81,6 +83,22 @@
             start();
         });
     });
+
+    if (previousButton) {
+        previousButton.addEventListener("click", function () {
+            stop();
+            show(activeIndex - 1);
+            start();
+        });
+    }
+
+    if (nextButton) {
+        nextButton.addEventListener("click", function () {
+            stop();
+            show(activeIndex + 1);
+            start();
+        });
+    }
 
     carousel.addEventListener("mouseenter", stop);
     carousel.addEventListener("mouseleave", start);
