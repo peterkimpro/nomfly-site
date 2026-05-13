@@ -86,7 +86,7 @@ We do **NOT**:
 
 ### All Users
 - **Access:** Export all your data in JSON format (Profile > Privacy & Data > Export My Data)
-- **Deletion:** Delete your account and all associated data (Profile > Privacy & Data > Delete Account)
+- **Deletion:** Delete your account and all associated data (Profile > Privacy & Data > Delete Account) or review account deletion instructions at https://www.nomfly.com/account-deletion
 - **AI Consent:** Revoke AI data sharing anytime (Profile > Privacy & Data > AI Data Sharing toggle)
 - **Correction:** Update your profile, preferences, and dietary restrictions anytime
 
