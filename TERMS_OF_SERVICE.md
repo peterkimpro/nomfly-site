@@ -61,18 +61,18 @@ You are responsible for safe food handling and preparation. Cooking times, tempe
 ## 5. Subscriptions & Payments
 
 ### Free Tier
-- 30-day full-access trial (no credit card required)
+- 7-day complimentary Pro access for eligible new accounts (no credit card required)
 - After trial: 3 meal decisions per day, 6 recipe views per day, basic features
 
 ### Nomfly Pro
-- $5.99/month or $39.99/year
+- $5.99/month or $49.99/year
 - Unlimited decisions, full browse access, fridge scan, household profiles, nutrition dashboard
 - Subscription auto-renews unless canceled at least 24 hours before the end of the current period
 - Cancel anytime via Apple's subscription management in Settings > Apple ID > Subscriptions
 - No refunds for partial billing periods
 
 ### Payment Processing
-- All payments processed through Apple's In-App Purchase system
+- Payments are processed through Apple In-App Purchase or Google Play Billing, depending on where you purchase Nomfly Pro.
 - We do not collect or store payment information directly
 
 ## 6. User-Submitted Content
