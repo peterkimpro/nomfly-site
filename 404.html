@@ -113,7 +113,7 @@
     <script>
         (function () {
             var APP_STORE_URL = "https://apps.apple.com/app/id6766716117";
-            var ANDROID_FALLBACK_URL = "https://www.nomfly.com";
+            var PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.peterkimpro.nomfly";
             var path = window.location.pathname || "";
             var query = window.location.search || "";
             var isAppLink = path.indexOf("/app/") === 0;
@@ -122,17 +122,17 @@
             var ua = navigator.userAgent || "";
             var isAndroid = /Android/i.test(ua);
             var isIOS = /iPhone|iPad|iPod/i.test(ua);
-            var storeUrl = isAndroid ? ANDROID_FALLBACK_URL : APP_STORE_URL;
+            var storeUrl = isAndroid ? PLAY_STORE_URL : APP_STORE_URL;
             var androidIntentUrl = appPath
-                ? "intent://" + appPath + query + "#Intent;scheme=nomfly;package=com.peterkimpro.nomfly;S.browser_fallback_url=" + encodeURIComponent(ANDROID_FALLBACK_URL) + ";end"
-                : "intent://#Intent;scheme=nomfly;package=com.peterkimpro.nomfly;S.browser_fallback_url=" + encodeURIComponent(ANDROID_FALLBACK_URL) + ";end";
+                ? "intent://" + appPath + query + "#Intent;scheme=nomfly;package=com.peterkimpro.nomfly;S.browser_fallback_url=" + encodeURIComponent(PLAY_STORE_URL) + ";end"
+                : "intent://#Intent;scheme=nomfly;package=com.peterkimpro.nomfly;S.browser_fallback_url=" + encodeURIComponent(PLAY_STORE_URL) + ";end";
             var launchUrl = isAndroid ? androidIntentUrl : appUrl;
             var leftPageForApp = false;
 
             document.getElementById("open-app").setAttribute("href", launchUrl);
             document.getElementById("download-app").setAttribute("href", storeUrl);
             if (isAndroid) {
-                document.getElementById("download-app").textContent = "Android coming soon";
+                document.getElementById("download-app").textContent = "Get it on Google Play";
             }
 
             if (!isAppLink) {

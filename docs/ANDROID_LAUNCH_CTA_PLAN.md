@@ -1,6 +1,6 @@
-# Android Launch CTA Plan
+# Android Launch CTA Behavior
 
-When Nomfly is live on both iOS and Android, keep both store badges visible for credibility, but make the device-matched store the primary mobile action.
+Nomfly is live on both iOS and Android. Keep both store badges visible for credibility, but make the device-matched store the primary mobile action.
 
 ## Recommended Behavior
 
@@ -16,4 +16,3 @@ When Nomfly is live on both iOS and Android, keep both store badges visible for 
 - Use CSS to assign the existing primary CTA treatment to the matching store badge.
 - Keep the mobile layout to one dominant install action plus one visible secondary option, rather than two competing full-strength buttons.
 - Preserve `prefers-reduced-motion` behavior for any pulse, heartbeat, or arrow animation.
-
