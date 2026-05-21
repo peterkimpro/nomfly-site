@@ -352,6 +352,41 @@ a.store-btn:hover {
 }
 
 @media (min-width: 701px) {
+    .platform-desktop .store-badges {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 8px;
+        width: 190px;
+    }
+
+    .platform-desktop .badge-wrapper {
+        width: 100%;
+        align-items: stretch;
+        gap: 4px;
+    }
+
+    .platform-desktop .app-store-download {
+        order: 1;
+    }
+
+    .platform-desktop .google-play-download {
+        order: 2;
+    }
+
+    .platform-desktop .store-btn {
+        width: 100%;
+        justify-content: center;
+        min-height: 46px;
+        padding: 8px 16px;
+    }
+
+    .platform-desktop .available-now {
+        text-align: center;
+        font-size: 0.58rem;
+        letter-spacing: 0.05em;
+    }
+
     .platform-android .badge-wrapper,
     .platform-ios .badge-wrapper {
         padding-top: 28px;
