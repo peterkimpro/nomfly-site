@@ -245,14 +245,6 @@ body {
     font-weight: 500;
 }
 
-.intro-copy {
-    max-width: 430px;
-    margin: 0 0 22px;
-    color: #555;
-    font-size: 0.98rem;
-    line-height: 1.55;
-}
-
 /* Store buttons */
 .store-badges {
     display: flex;
@@ -861,6 +853,14 @@ footer {
     margin: 0;
 }
 
+.seo-note {
+    max-width: 640px;
+    margin-top: 8px !important;
+    color: #666 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.55 !important;
+}
+
 .store-summary-links {
     display: grid;
     gap: 9px;
@@ -937,13 +937,6 @@ footer {
     .subtitle {
         font-size: 0.96rem;
         margin-bottom: 10px;
-    }
-
-    .intro-copy {
-        max-width: 326px;
-        margin: 0 auto 16px;
-        font-size: 0.9rem;
-        line-height: 1.5;
     }
 
     .store-badges {
@@ -1213,12 +1206,6 @@ footer {
     .subtitle {
         font-size: 0.88rem;
         margin-bottom: 8px;
-    }
-
-    .intro-copy {
-        font-size: 0.82rem;
-        line-height: 1.42;
-        margin-bottom: 10px;
     }
 
     .store-btn {
