@@ -43,27 +43,59 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Nomfly",
-      "description": "Nomfly is a recipe and meal planning app for iPhone and Android. Discover personalized meal ideas, swipe to choose, save recipes, and build grocery lists.",
-      "url": "https://www.nomfly.com/",
-      "image": "https://www.nomfly.com/assets/app-icon.png",
-      "applicationCategory": "Food & Drink",
-      "operatingSystem": "iOS, Android",
-      "downloadUrl": [
-        "https://apps.apple.com/app/id6766716117",
-        "https://play.google.com/store/apps/details?id=com.peterkimpro.nomfly"
-      ],
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "sameAs": [
-        "https://apps.apple.com/app/id6766716117",
-        "https://play.google.com/store/apps/details?id=com.peterkimpro.nomfly",
-        "https://instagram.com/nomfly_app",
-        "https://www.tiktok.com/@nomfly.app"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.nomfly.com/#organization",
+          "name": "Nomfly",
+          "legalName": "Tapwise Digital LLC",
+          "url": "https://www.nomfly.com/",
+          "logo": "https://www.nomfly.com/assets/app-icon.png",
+          "sameAs": [
+            "https://apps.apple.com/app/id6766716117",
+            "https://play.google.com/store/apps/details?id=com.peterkimpro.nomfly",
+            "https://instagram.com/nomfly_app",
+            "https://www.tiktok.com/@nomfly.app"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.nomfly.com/#website",
+          "name": "Nomfly",
+          "alternateName": "Nomfly Recipe App",
+          "url": "https://www.nomfly.com/",
+          "publisher": {
+            "@id": "https://www.nomfly.com/#organization"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://www.nomfly.com/#app",
+          "name": "Nomfly",
+          "description": "Nomfly is a recipe and meal planning app for iPhone and Android. Discover personalized meal ideas, swipe to choose, save recipes, and build grocery lists.",
+          "url": "https://www.nomfly.com/",
+          "image": "https://www.nomfly.com/assets/app-icon.png",
+          "applicationCategory": "Food & Drink",
+          "operatingSystem": "iOS, Android",
+          "publisher": {
+            "@id": "https://www.nomfly.com/#organization"
+          },
+          "downloadUrl": [
+            "https://apps.apple.com/app/id6766716117",
+            "https://play.google.com/store/apps/details?id=com.peterkimpro.nomfly"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "sameAs": [
+            "https://apps.apple.com/app/id6766716117",
+            "https://play.google.com/store/apps/details?id=com.peterkimpro.nomfly",
+            "https://instagram.com/nomfly_app",
+            "https://www.tiktok.com/@nomfly.app"
+          ]
+        }
       ]
     }
     </script>
@@ -253,13 +285,13 @@
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="https://www.nomfly.com/privacy">Privacy Policy</a>
+                <a href="https://www.nomfly.com/privacy/">Privacy Policy</a>
                 <span class="divider"></span>
-                <a href="https://www.nomfly.com/account-deletion">Account Deletion</a>
+                <a href="https://www.nomfly.com/account-deletion/">Account Deletion</a>
                 <span class="divider"></span>
-                <a href="https://www.nomfly.com/terms">Terms of Service</a>
+                <a href="https://www.nomfly.com/terms/">Terms of Service</a>
                 <span class="divider"></span>
-                <a href="https://www.nomfly.com/support">Support</a>
+                <a href="https://www.nomfly.com/support/">Support</a>
                 <span class="divider"></span>
                 <a href="https://instagram.com/nomfly_app" target="_blank" rel="noopener">Instagram</a>
                 <span class="divider"></span>

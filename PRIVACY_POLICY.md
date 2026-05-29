@@ -86,7 +86,7 @@ We do **NOT**:
 
 ### All Users
 - **Access:** Export all your data in JSON format (Profile > Privacy & Data > Export My Data)
-- **Deletion:** Delete your account and all associated data (Profile > Privacy & Data > Delete Account) or review account deletion instructions at https://www.nomfly.com/account-deletion
+- **Deletion:** Delete your account and all associated data (Profile > Privacy & Data > Delete Account) or review account deletion instructions at https://www.nomfly.com/account-deletion/
 - **AI Consent:** Revoke AI data sharing anytime (Profile > Privacy & Data > AI Data Sharing toggle)
 - **Correction:** Update your profile, preferences, and dietary restrictions anytime
 
@@ -121,5 +121,5 @@ We may update this Privacy Policy from time to time. We will notify you of mater
 
 For privacy questions or to exercise your rights:
 - **Email:** support@nomfly.com
-- **Website:** https://www.nomfly.com/privacy
+- **Website:** https://www.nomfly.com/privacy/
 - **Mail:** Tapwise Digital LLC, 4030 Wake Forest Road, STE 349, Raleigh, NC 27609, USA
