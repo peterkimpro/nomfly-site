@@ -102,7 +102,7 @@
         <p>This shared meal opens in the Nomfly app. If the app is not installed, download it for your phone.</p>
         <div class="actions">
             <a id="open-app" class="primary" href="nomfly://">Open in Nomfly</a>
-            <a id="download-app" class="secondary" href="https://apps.apple.com/app/id6766716117">Download on the App Store</a>
+            <a id="download-app" class="secondary" href="https://apps.apple.com/app/id6766716117" data-download-store="app_store" data-download-location="deep_link_fallback">Download on the App Store</a>
         </div>
         <p class="small">If nothing happens, tap Download Nomfly.</p>
     </main>
@@ -110,7 +110,7 @@
     <script>
         (function () {
             var APP_STORE_URL = "https://apps.apple.com/app/id6766716117";
-            var PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.peterkimpro.nomfly";
+            var PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.peterkimpro.nomfly&utm_source=nomfly_site&utm_medium=website&utm_campaign=website_download";
             var path = window.location.pathname || "";
             var query = window.location.search || "";
             var isAppLink = path.indexOf("/app/") === 0;
@@ -130,6 +130,7 @@
             document.getElementById("download-app").setAttribute("href", storeUrl);
             if (isAndroid) {
                 document.getElementById("download-app").textContent = "Get it on Google Play";
+                document.getElementById("download-app").setAttribute("data-download-store", "google_play");
             }
 
             if (!isAppLink) {
