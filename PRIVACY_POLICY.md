@@ -1,6 +1,6 @@
 # Nomfly Privacy Policy
 
-**Last Updated: May 10, 2026**
+**Last Updated: June 2, 2026**
 
 Tapwise Digital LLC ("we," "us," or "our") operates the Nomfly mobile application. This Privacy Policy explains how we collect, use, and share your personal information.
 
@@ -17,7 +17,7 @@ Tapwise Digital LLC ("we," "us," or "our") operates the Nomfly mobile applicatio
 
 ### Information Collected Automatically
 - **App Usage Data:** Decision counts, feature usage patterns, session frequency
-- **Website Analytics:** Page views, referrers, outbound link clicks, browser/device information, and approximate geography through Google Analytics
+- **Website Analytics:** Page views, referrers, outbound link clicks, browser/device information, and approximate geography through Plausible Analytics
 - **Device Information:** iOS version, device model (for compatibility only)
 
 ### Information Processed Temporarily
@@ -44,11 +44,11 @@ Nomfly uses third-party services to power core features and understand website t
 - **Data Shared:** Approximate location (latitude/longitude) — only when you grant location permission
 - **Google's Privacy Policy:** https://policies.google.com/privacy
 
-### Google Analytics
+### Plausible Analytics
 - **Purpose:** Website traffic measurement, source/referrer reporting, page engagement, and outbound click analytics
 - **Data Shared:** Website page URLs, referrers, browser/device information, approximate geography, and click events for App Store, support, and social links
 - **Data NOT Shared:** Your Nomfly account data, meal preferences, grocery lists, recipe content, payment information, or app activity
-- **Google's Privacy Policy:** https://policies.google.com/privacy
+- **Plausible's Data Policy:** https://plausible.io/data-policy
 
 ### USDA (FoodData Central)
 - **Purpose:** Nutrition information for recipes
