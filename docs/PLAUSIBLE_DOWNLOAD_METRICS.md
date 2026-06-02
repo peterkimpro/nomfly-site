@@ -35,11 +35,9 @@ Plausible cannot see the user's tap on Apple's `Get` button or Google Play's `In
 
 For iOS:
 
-1. In App Store Connect, open Nomfly > Analytics > Acquisition > Campaigns.
-2. Create a campaign named `nomfly_site`.
-3. Copy the generated campaign link. It should include both `pt=` and `ct=` parameters.
-4. Replace the iOS website links with that generated URL.
-5. In App Store Connect Analytics, filter by the `nomfly_site` campaign to see product page views, first-time downloads, sales, and retention. Apple only shows campaign data after privacy thresholds are met.
+1. The website App Store links use the App Store Connect campaign URL `https://apps.apple.com/app/apple-store/id6766716117?pt=128870510&ct=nomfly_site&mt=8`.
+2. In App Store Connect Analytics, filter by the `nomfly_site` campaign to see product page views, first-time downloads, sales, and retention.
+3. Apple only shows campaign data after privacy thresholds are met.
 
 For Android:
 
