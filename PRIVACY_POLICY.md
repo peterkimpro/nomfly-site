@@ -16,8 +16,8 @@ Tapwise Digital LLC ("we," "us," or "our") operates the Nomfly mobile applicatio
 - **Saved Recipes & Collections:** Recipes you save and how you organize them
 
 ### Information Collected Automatically
-- **App Usage Data:** Decision counts, feature usage patterns, session frequency
-- **Website Analytics:** Page views, referrers, outbound link clicks, browser/device information, and approximate geography through Plausible Analytics
+- **App Usage Data:** Decision counts, feature usage patterns, session frequency, and first-open activation events
+- **Website and Activation Analytics:** Website page views, referrers, outbound link clicks, app first-open events, browser/device information, app platform/version, and approximate geography through Plausible Analytics
 - **Device Information:** iOS version, device model (for compatibility only)
 
 ### Information Processed Temporarily
@@ -45,9 +45,9 @@ Nomfly uses third-party services to power core features and understand website t
 - **Google's Privacy Policy:** https://policies.google.com/privacy
 
 ### Plausible Analytics
-- **Purpose:** Website traffic measurement, source/referrer reporting, page engagement, and outbound click analytics
-- **Data Shared:** Website page URLs, referrers, browser/device information, approximate geography, and click events for App Store, support, and social links
-- **Data NOT Shared:** Your Nomfly account data, meal preferences, grocery lists, recipe content, payment information, or app activity
+- **Purpose:** Website traffic measurement, source/referrer reporting, page engagement, outbound click analytics, and app first-open activation measurement
+- **Data Shared:** Website page URLs, referrers, browser/device information, approximate geography, click events for App Store, support, and social links, and first-open activation events with app platform/version. Android first-open events may include Google Play UTM source/campaign values when available.
+- **Data NOT Shared:** Your Nomfly account data, meal preferences, grocery lists, recipe content, payment information, or detailed app activity
 - **Plausible's Data Policy:** https://plausible.io/data-policy
 
 ### USDA (FoodData Central)

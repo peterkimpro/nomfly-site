@@ -11,6 +11,9 @@ In Plausible for `nomfly.com`, go to Site settings > Goals > Add goal > Custom e
 - `Download App Click` for total website-to-store intent.
 - `App Store Click` for iOS store clicks.
 - `Google Play Click` for Android store clicks.
+- `App First Open` for total app installs that opened Nomfly at least once.
+- `iOS First Open` for first opens on iPhone.
+- `Android First Open` for first opens on Android.
 
 After at least one click is recorded, the event properties can show where the click came from:
 
@@ -18,6 +21,10 @@ After at least one click is recorded, the event properties can show where the cl
 - `download_location`: `hero`, `download_panel`, or `deep_link_fallback`
 - `visitor_platform`: `ios`, `android`, or `desktop`
 - `page_path`: website path where the click happened
+- `platform`: app platform for first-open events
+- `app_version`: app version for first-open events
+- `app_build`: app build/versionCode for first-open events
+- `utm_source`, `utm_medium`, `utm_campaign`: Android install-referrer values when Google Play provides them
 
 The site intentionally sends `Download App Click` plus the store-specific event for each app-store click. This gives a total download-click conversion goal and per-store goals without relying on property-filtered goals. Plausible counts custom events toward billable monthly pageviews, so each store click records two conversion events.
 
@@ -26,8 +33,12 @@ The site intentionally sends `Download App Click` plus the store-specific event 
 - Overall website download-click rate: open the `Download App Click` goal and use its conversion rate.
 - iOS click rate: open the `App Store Click` goal.
 - Android click rate: open the `Google Play Click` goal.
+- App activation count: open the `App First Open` goal.
+- iOS/Android activation split: compare `iOS First Open` and `Android First Open`.
 - Which source sends download intent: filter the dashboard by a goal, then inspect Sources, Entry Pages, Countries, and Devices.
 - Which CTA works: inspect the event properties and compare `download_location`.
+
+Create the goals first. If Plausible plan/features support funnels, an optional funnel can use `Download App Click` followed by `App First Open`, but the store handoff can break same-visitor matching, so the goal counts are the reliable activation metric.
 
 ## Store-side download attribution
 
@@ -52,6 +63,7 @@ Use Plausible for:
 
 - `nomfly.com` visitors
 - visitors who clicked a store download CTA
+- app first opens after install
 - conversion rate by traffic source, page, country, and device
 
 Use the store consoles for:
