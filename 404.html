@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script defer src="/analytics.js?v=20260704-ga4"></script>
+    <script defer src="/analytics.js?v=20260704-ga4-auto"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="origin">
@@ -113,7 +113,7 @@
             var appUrl = appPath ? "nomfly://" + appPath + query : "nomfly://";
             var ua = navigator.userAgent || "";
             var isAndroid = /Android/i.test(ua);
-            var isIOS = /iPhone|iPad|iPod/i.test(ua);
+            var isIOS = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
             var storeUrl = isAndroid ? PLAY_STORE_URL : APP_STORE_URL;
             var androidIntentUrl = appPath
                 ? "intent://" + appPath + query + "#Intent;scheme=nomfly;package=com.peterkimpro.nomfly;S.browser_fallback_url=" + encodeURIComponent(PLAY_STORE_URL) + ";end"

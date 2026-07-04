@@ -2,16 +2,17 @@
 
 Last updated: July 4, 2026
 
-Nomfly's GitHub Pages website sends consented website analytics to the Google Analytics 4 web stream with Measurement ID `G-7P2BKRZX8B`. The app stores own the next step after a visitor leaves the website, so actual downloads must still be read in App Store Connect and Play Console.
+Nomfly's GitHub Pages website sends privacy-limited website analytics to the Google Analytics 4 web stream with Measurement ID `G-7P2BKRZX8B`. The app stores own the next step after a visitor leaves the website, so actual downloads must still be read in App Store Connect and Play Console.
 
-## Privacy and consent behavior
+## Privacy behavior
 
-- The Google tag is not requested or initialized before the visitor chooses **Allow analytics**.
-- Choosing **No thanks** leaves Google Analytics unloaded.
-- Advertising storage, Google Signals, ad personalization, and ad-user-data collection remain disabled even after analytics consent.
-- The website remembers only the consent choice in local storage.
-- **Analytics choices** in the footer lets the visitor change the choice. Revoking consent removes `_ga` cookies and reloads without the Google tag.
-- Analytics cookies are configured for a fixed maximum age of 90 days and are not renewed on later visits.
+- The Google tag loads automatically only on allowlisted canonical public pages.
+- The production host allowlist accepts only `nomfly.com` and `www.nomfly.com`; repository previews and clones cannot pollute the GA4 property. A loopback-only QA flag exists for automated network tests.
+- For visitors whom Google's regional controls identify as being in the EEA, United Kingdom and certain related territories, Switzerland, Canada, or covered EU territories, `analytics_storage` is set to `denied`; Google Analytics does not read or write analytics cookies and sends cookieless measurements that Google may use for aggregate measurement and modeling.
+- Elsewhere, `analytics_storage` defaults to `granted`. Analytics cookies are configured for a fixed maximum age of 90 days and are not renewed on later visits; visitors can block or delete them in browser settings.
+- Advertising storage, Google Signals, ad personalization, and ad-user-data collection remain disabled everywhere.
+- The tag does not load when the browser sends a supported Global Privacy Control or Do Not Track signal.
+- A browser-level analytics opt-out stored by the prior consent-banner version remains honored; any `_ga` cookies visible to the site are removed before the script exits.
 - Only known canonical pages are measured. Arbitrary 404 and app deep-link routes are excluded so UUIDs and visitor-supplied page query values cannot reach Google Analytics. Fixed public app-store campaign parameters can appear in outbound-link measurement if Enhanced Measurement remains enabled.
 - Referrers are reduced to their origin. Nomfly's custom events use fixed categories rather than raw URLs or link text. If GA4 Enhanced Measurement remains enabled, it can separately record fixed public outbound-link destinations on the allowlisted pages.
 
@@ -19,7 +20,7 @@ Nomfly's GitHub Pages website sends consented website analytics to the Google An
 
 | GA4 event | Meaning | Parameters |
 |---|---|---|
-| `page_view` | Consented visit to a canonical website page | `page_group`, sanitized `page_path`, sanitized `page_location` |
+| `page_view` | Visit to a canonical website page | `page_group`, sanitized `page_path`, sanitized `page_location` |
 | `download_app_click` | Any App Store or Google Play CTA click | `store`, `download_location`, `visitor_platform`, `page_group` |
 | `app_store_click` | App Store CTA click | Same download parameters |
 | `google_play_click` | Google Play CTA click | Same download parameters |
@@ -71,6 +72,6 @@ The web Measurement ID is not a safe native-app analytics configuration. Current
 - Google tag setup: https://support.google.com/analytics/answer/15756615
 - GA4 events: https://developers.google.com/analytics/devguides/collection/ga4/events
 - Event parameters and custom dimensions: https://developers.google.com/analytics/devguides/collection/ga4/event-parameters
-- Consent Mode: https://developers.google.com/tag-platform/security/guides/consent
+- Region-specific storage defaults: https://developers.google.com/tag-platform/security/guides/consent#region-specific_behavior
 - App Store Connect campaign links: https://developer.apple.com/help/app-store-connect-analytics/acquisition/campaign-links
 - Google Play acquisition reports: https://support.google.com/googleplay/android-developer/answer/9859173

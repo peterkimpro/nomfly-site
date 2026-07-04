@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script defer src="/analytics.js?v=20260704-ga4"></script>
+    <script defer src="/analytics.js?v=20260704-ga4-auto"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="origin">
@@ -39,7 +39,7 @@
         <h3>Information Collected Automatically</h3>
         <ul>
             <li><strong>App Usage Data:</strong> Decision counts, feature usage patterns, session frequency, and first-open activation events</li>
-            <li><strong>Website Analytics (with your consent):</strong> Sanitized page groups, referrer origin, browser/device information, approximate geography, pseudonymous client/session identifiers, and controlled click events for app-store, support, and social links through Google Analytics</li>
+            <li><strong>Website Analytics:</strong> Sanitized page groups, referrer origin, browser/device information, approximate geography, pseudonymous client/session identifiers, and controlled click events for app-store, support, and social links through Google Analytics</li>
             <li><strong>Mobile Activation Analytics:</strong> Some currently distributed iOS and Android versions send a one-time first-open event to Plausible with app platform, version, and build. Android may include Google Play campaign source/medium/campaign values when available.</li>
             <li><strong>Device Information:</strong> iOS version, device model (for compatibility only)</li>
         </ul>
@@ -75,11 +75,12 @@
 
         <h3>Google Analytics</h3>
         <ul>
-            <li><strong>Purpose:</strong> Consent-based website traffic, source/referrer, page engagement, and app-store/support/social click measurement</li>
-            <li><strong>Data Shared:</strong> Sanitized page group, referrer origin, browser/device information, approximate geography, pseudonymous client/session identifiers, allowlisted custom click-event values, and fixed public outbound-link destinations if Google's Enhanced Measurement is enabled</li>
+            <li><strong>Purpose:</strong> Website traffic, source/referrer, page engagement, and app-store/support/social click measurement</li>
+            <li><strong>Data Shared:</strong> Sanitized page group, referrer origin, browser/device information, request IP address (used by Google Analytics to derive approximate geography but not logged or stored by Google Analytics), pseudonymous client/session identifiers where analytics storage is enabled, allowlisted custom click-event values, and fixed public outbound-link destinations if Google's Enhanced Measurement is enabled</li>
             <li><strong>Data NOT Shared:</strong> Nomfly account data, meal preferences, grocery lists, recipe content, payment information, raw deep-link identifiers, or visitor-supplied page URL query values. Fixed public app-store campaign parameters may appear in outbound-link measurement.</li>
-            <li><strong>Privacy Controls:</strong> The Google tag does not load until you choose "Allow analytics." Advertising storage, Google Signals, ad personalization, and cross-site advertising use are disabled.</li>
+            <li><strong>Privacy Controls:</strong> Google Analytics runs only on allowlisted public website pages at Nomfly's production domains. For visitors whom Google's regional controls identify as being in the EEA, United Kingdom and certain related territories, Switzerland, Canada, or covered EU territories, analytics cookie storage is set to denied; Google receives cookieless measurements that it may use for aggregate measurement and modeling. Advertising storage, Google Signals, ad personalization, and cross-site advertising use are disabled everywhere.</li>
             <li><strong>Google's Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+            <li><strong>How Google Uses Partner-Site Data:</strong> <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a></li>
         </ul>
 
         <h3>Plausible Analytics (Current Mobile Builds)</h3>
@@ -126,7 +127,7 @@
             <li><strong>Taste Profile:</strong> Retained until you delete your account</li>
             <li><strong>Fridge Photos:</strong> Not retained — processed and discarded immediately</li>
             <li><strong>AI-Generated Images:</strong> Stored in AWS S3 indefinitely (not linked to your identity)</li>
-            <li><strong>Website Analytics Cookies:</strong> Created only after consent, configured to expire after no more than 90 days without renewal, and deleted when you withdraw consent through Analytics choices</li>
+            <li><strong>Website Analytics Cookies:</strong> Where analytics cookie storage is enabled, first-party <code>_ga</code> cookies may be created on allowlisted public website pages and are configured to expire after no more than 90 days without renewal</li>
         </ul>
 
         <h2>6. Your Rights</h2>
@@ -136,7 +137,7 @@
             <li><strong>Access:</strong> Export all your data in JSON format (Profile &gt; Privacy &amp; Data &gt; Export My Data)</li>
             <li><strong>Deletion:</strong> Delete your account and all associated data (Profile &gt; Privacy &amp; Data &gt; Delete Account) or review <a href="https://www.nomfly.com/account-deletion/">account deletion instructions</a></li>
             <li><strong>AI Consent:</strong> Revoke AI data sharing anytime (Profile &gt; Privacy &amp; Data &gt; AI Data Sharing toggle)</li>
-            <li><strong>Website Analytics Choice:</strong> Allow, decline, or withdraw Google Analytics consent using "Analytics choices" in the website footer</li>
+            <li><strong>Browser Controls:</strong> Block or delete website analytics cookies using your browser's privacy settings. Nomfly does not load Google Analytics when the browser sends a supported Global Privacy Control or Do Not Track signal, and a browser-level analytics opt-out saved by an earlier website version remains honored.</li>
             <li><strong>Correction:</strong> Update your profile, preferences, and dietary restrictions anytime</li>
         </ul>
 
@@ -158,8 +159,8 @@
         <h2>7. International Data Transfers</h2>
         <p>If you access Nomfly from outside the United States, your personal data may be transferred to and processed in the United States by us and the service providers listed above. We use appropriate contractual and technical safeguards where required.</p>
 
-        <h2>8. Website Analytics Choices and Cookies</h2>
-        <p>Nomfly uses Basic Consent Mode. Google Analytics is not loaded and analytics cookies are not created unless you choose "Allow analytics." Choosing "No thanks" keeps analytics off. You can reopen "Analytics choices" in the website footer at any time; withdrawing consent deletes Google Analytics cookies and prevents the tag from loading on future pages. The small local-storage value that remembers your choice is used only to honor that preference.</p>
+        <h2>8. Website Analytics and Cookies</h2>
+        <p>Nomfly uses Google Analytics on allowlisted public website pages at <code>nomfly.com</code> and <code>www.nomfly.com</code> as disclosed in this policy. For visitors whom Google's regional controls identify as being in the EEA, United Kingdom and certain related territories, Switzerland, Canada, or covered EU territories, analytics storage is set to denied: Google Analytics does not read or write analytics cookies and instead receives cookieless measurements that it may use for aggregate measurement and modeling. Elsewhere, Analytics may create first-party <code>_ga</code> cookies containing pseudonymous client and session identifiers; these cookies are configured to expire after no more than 90 days and are not renewed on later visits. You can block or delete cookies using your browser settings. Nomfly does not load Google Analytics when the browser sends a supported Global Privacy Control or Do Not Track signal, and a browser-level analytics opt-out saved by an earlier website version remains honored. Advertising storage, Google Signals, ad personalization, and cross-site advertising use are disabled everywhere.</p>
         <p>To reduce collection, Nomfly's custom analytics sends only allowlisted website page groups and click categories. The Google tag is not loaded on arbitrary 404 routes or app deep-link routes, so recipe, decision, share, and visitor-supplied page query identifiers are not sent to Google Analytics.</p>
 
         <h2>9. Children's Privacy</h2>

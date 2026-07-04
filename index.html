@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" class="platform-unknown">
 <head>
-    <script defer src="/analytics.js?v=20260704-ga4"></script>
+    <script defer src="/analytics.js?v=20260704-ga4-auto"></script>
     <script defer src="carousel.js"></script>
     <script>
       (function () {
         var ua = navigator.userAgent || "";
+        var isIPad = /iPad/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
         var root = document.documentElement;
         root.classList.remove("platform-unknown");
-        root.classList.add(/Android/i.test(ua) ? "platform-android" : (/iPhone|iPad|iPod/i.test(ua) ? "platform-ios" : "platform-desktop"));
+        root.classList.add(/Android/i.test(ua) ? "platform-android" : (/iPhone|iPod/i.test(ua) || isIPad ? "platform-ios" : "platform-desktop"));
       }());
     </script>
     <meta charset="UTF-8">
