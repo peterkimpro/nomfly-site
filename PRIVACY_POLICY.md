@@ -1,8 +1,8 @@
 # Nomfly Privacy Policy
 
-**Last Updated: June 2, 2026**
+**Last Updated: July 4, 2026**
 
-Tapwise Digital LLC ("we," "us," or "our") operates the Nomfly mobile application. This Privacy Policy explains how we collect, use, and share your personal information.
+Tapwise Digital LLC ("we," "us," or "our") operates the Nomfly mobile application and website. This Privacy Policy explains how we collect, use, and share your personal information.
 
 ## 1. Information We Collect
 
@@ -17,11 +17,12 @@ Tapwise Digital LLC ("we," "us," or "our") operates the Nomfly mobile applicatio
 
 ### Information Collected Automatically
 - **App Usage Data:** Decision counts, feature usage patterns, session frequency, and first-open activation events
-- **Website and Activation Analytics:** Website page views, referrers, outbound link clicks, app first-open events, browser/device information, app platform/version, and approximate geography through Plausible Analytics
+- **Website Analytics (with your consent):** Sanitized page groups, referrer origin, browser/device information, approximate geography, pseudonymous client/session identifiers, and controlled click events for app-store, support, and social links through Google Analytics
+- **Mobile Activation Analytics:** Some currently distributed iOS and Android versions send a one-time first-open event to Plausible with app platform, version, and build. Android may include Google Play campaign source/medium/campaign values when available.
 - **Device Information:** iOS version, device model (for compatibility only)
 
 ### Information Processed Temporarily
-- **Fridge Photos:** When you use the fridge scan feature, your photo is sent to Anthropic's Claude Vision API for ingredient identification. The photo is NOT stored on our servers. It is transmitted via encrypted connection (TLS 1.3), processed, and discarded.
+- **Fridge Photos:** When you use the ingredient scan feature, your photo is sent to Anthropic's Claude Vision API for ingredient identification. The photo is NOT stored on our servers. It is transmitted via encrypted connection (TLS 1.3), processed, and discarded.
 
 ## 2. Third-Party Service Providers
 
@@ -44,10 +45,17 @@ Nomfly uses third-party services to power core features and understand website t
 - **Data Shared:** Approximate location (latitude/longitude) — only when you grant location permission
 - **Google's Privacy Policy:** https://policies.google.com/privacy
 
-### Plausible Analytics
-- **Purpose:** Website traffic measurement, source/referrer reporting, page engagement, outbound click analytics, and app first-open activation measurement
-- **Data Shared:** Website page URLs, referrers, browser/device information, approximate geography, click events for App Store, support, and social links, and first-open activation events with app platform/version. Android first-open events may include Google Play UTM source/campaign values when available.
-- **Data NOT Shared:** Your Nomfly account data, meal preferences, grocery lists, recipe content, payment information, or detailed app activity
+### Google Analytics
+- **Purpose:** Consent-based website traffic, source/referrer, page engagement, and app-store/support/social click measurement
+- **Data Shared:** Sanitized page group, referrer origin, browser/device information, approximate geography, pseudonymous client/session identifiers, allowlisted custom click-event values, and fixed public outbound-link destinations if Google's Enhanced Measurement is enabled
+- **Data NOT Shared:** Nomfly account data, meal preferences, grocery lists, recipe content, payment information, raw deep-link identifiers, or visitor-supplied page URL query values. Fixed public app-store campaign parameters may appear in outbound-link measurement.
+- **Privacy Controls:** The Google tag does not load until you choose "Allow analytics." Advertising storage, Google Signals, ad personalization, and cross-site advertising use are disabled.
+- **Google's Privacy Policy:** https://policies.google.com/privacy
+
+### Plausible Analytics (Current Mobile Builds)
+- **Purpose:** One-time first-open activation measurement from some currently distributed mobile app versions
+- **Data Shared:** Request IP address, app platform/version/build, and optional Google Play campaign source/medium/campaign values
+- **Data NOT Shared:** Nomfly account data, meal preferences, grocery lists, recipe content, payment information, or detailed app activity
 - **Plausible's Data Policy:** https://plausible.io/data-policy
 
 ### USDA (FoodData Central)
@@ -81,6 +89,7 @@ We do **NOT**:
 - **Taste Profile:** Retained until you delete your account
 - **Fridge Photos:** Not retained — processed and discarded immediately
 - **AI-Generated Images:** Stored in AWS S3 indefinitely (not linked to your identity)
+- **Website Analytics Cookies:** Created only after consent, configured to expire after no more than 90 days without renewal, and deleted when you withdraw consent through Analytics choices
 
 ## 6. Your Rights
 
@@ -88,6 +97,7 @@ We do **NOT**:
 - **Access:** Export all your data in JSON format (Profile > Privacy & Data > Export My Data)
 - **Deletion:** Delete your account and all associated data (Profile > Privacy & Data > Delete Account) or review account deletion instructions at https://www.nomfly.com/account-deletion/
 - **AI Consent:** Revoke AI data sharing anytime (Profile > Privacy & Data > AI Data Sharing toggle)
+- **Website Analytics Choice:** Allow, decline, or withdraw Google Analytics consent using "Analytics choices" in the website footer
 - **Correction:** Update your profile, preferences, and dietary restrictions anytime
 
 ### GDPR (EU/EEA Users)
@@ -107,7 +117,13 @@ We comply with Japan's Act on the Protection of Personal Information. Your data 
 
 ## 7. International Data Transfers
 
-If you access Nomfly from outside the United States, your personal data will be transferred to and processed in the United States, where our servers and AI providers (Anthropic, OpenAI) are located. By using the App, you consent to this transfer. We use Standard Contractual Clauses (SCCs) and Data Processing Agreements (DPAs) with our AI providers to ensure adequate data protection for international transfers.
+If you access Nomfly from outside the United States, your personal data may be transferred to and processed in the United States by us and the service providers listed above. We use appropriate contractual and technical safeguards where required.
+
+## 8. Website Analytics Choices and Cookies
+
+Nomfly uses Basic Consent Mode. Google Analytics is not loaded and analytics cookies are not created unless you choose "Allow analytics." Choosing "No thanks" keeps analytics off. You can reopen "Analytics choices" in the website footer at any time; withdrawing consent deletes Google Analytics cookies and prevents the tag from loading on future pages. The small local-storage value that remembers your choice is used only to honor that preference.
+
+To reduce collection, Nomfly's custom analytics sends only allowlisted website page groups and click categories. The Google tag is not loaded on arbitrary 404 routes or app deep-link routes, so recipe, decision, share, and visitor-supplied page query identifiers are not sent to Google Analytics.
 
 ## 9. Children's Privacy
 
