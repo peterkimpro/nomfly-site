@@ -1,4 +1,5 @@
 exclude:
+  - CNAME
   - PRIVACY_POLICY.md
   - TERMS_OF_SERVICE.md
   - docs
